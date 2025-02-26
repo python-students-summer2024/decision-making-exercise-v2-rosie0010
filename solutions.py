@@ -28,6 +28,14 @@ def is_square():
     """
     #### write your solution for this function below here. ####
 
+    width = float(input("Enter the width of an area: "))
+    height = float(input("Enter the height of an area: "))
+    if width == height:
+        return True
+    else:
+        return False
+
+
 
 def get_greatest():
     """
@@ -38,6 +46,16 @@ def get_greatest():
     :returns: the greatest of the two input numbers, as an int.
     """
     #### write your solution for this function below here. ####
+
+    num1 = int(input("Enter an integer: "))
+    num2 = int(input("Enter another integer: "))
+
+    if num1 > num2:
+        return num1
+    elif num2 > num1:
+        return num2
+    else:
+        return num1
 
 
 def get_bmi_category():
@@ -60,6 +78,28 @@ def get_bmi_category():
       :returns: The name of the BMI statistical category, based on the inputted height and weight.
     """
     #### write your solution for this function below here. ####
+    
+    height = float(input("Enter your height in inches: "))
+    weight = float(input("Enter your weight in pounds: "))
+    
+    BMI = 703 * weight / (height ** 2)
+
+    if BMI < 15:
+        return "Very severely underweight"
+    elif 15 <= BMI < 16:
+        return "Severely underweight"
+    elif 16 <= BMI < 18.5:
+        return "Underweight"
+    elif 18.5 <= BMI < 25:
+        return "Normal"
+    elif 25 <= BMI < 30:
+        return "Overweight"
+    elif 30 <= BMI < 35:
+        return "Moderately obese"
+    elif 35 <= BMI < 40:
+        return "Severely obese"
+    else:
+        return "Very severely obese"
 
 
 def get_discount():
@@ -73,11 +113,20 @@ def get_discount():
     """
     #### write your solution for this function below here. ####
 
+    num_masks = int(input("How many masks would you like to purchase? "))
+
+    if num_masks >= 5000:
+        total_cost_of_masks = int((5 * num_masks) * 0.8)
+        return f"${total_cost_of_masks:,}"
+    else:
+        total_cost_of_masks = int((5 * num_masks))
+        return f"${total_cost_of_masks:,}"
 
 def is_leap_year():
     """
     Determines whether the current year is a leap year.
-    Any year evenly divisible by 4 is a leap year, except century years such as 1900, 2000, 2100, etc. Only century years evenly divisible by 400 are leap years.
+    Any year evenly divisible by 4 is a leap year, except century years such as 1900, 2000, 2100, etc. 
+    Only century years evenly divisible by 400 are leap years.
 
     :returns: True if the current year is a leap year, False otherwise.
     """
@@ -85,3 +134,14 @@ def is_leap_year():
         get_year()
     )  # this line is given to you - the variable, year, holds the current year
     #### write your solution for this function below here. ####
+
+    if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0):
+        return True
+    else:
+        return False
+        
+
+
+
+
+
